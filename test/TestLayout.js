@@ -1,5 +1,6 @@
 import React from 'react';
 import Resizable from '../lib/Resizable';
+import Draggable from 'react-draggable';
 import ResizableBox from '../lib/ResizableBox';
 import 'style-loader!css-loader!../css/styles.css';
 import 'style-loader!css-loader!./test.css';
@@ -72,6 +73,13 @@ export default class TestLayout extends React.Component<{}, {width: number, heig
           <ResizableBox className="box" width={200} height={200} axis="none">
             <span className="text">Not resizable ("none" axis).</span>
           </ResizableBox>
+          <Draggable>
+            <div>
+              <ResizableBox className="box" width={200} height={200}>
+                <span className="text">Both resizable and draggable</span>
+              </ResizableBox>
+            </div>
+          </Draggable>
         </div>
       </div>
     );
